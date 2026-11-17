@@ -1,0 +1,13 @@
+.pv { position: relative; }
+.pv__stage { position: relative; height: clamp(320px, 52vh, 560px); border-radius: 6px; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 8%, #3b6b55 0%, #234335 45%, #14241c 100%);
+  box-shadow: inset 0 0 0 1px rgba(250,246,238,.08), inset 0 -80px 120px -60px rgba(0,0,0,.45), 0 40px 70px -40px rgba(20,36,28,.7); }
+.pv__stage::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 40% at 50% 100%, rgba(241,201,204,.14), transparent 70%); }
+.pv__canvas { position: absolute; inset: 0; cursor: grab; outline-offset: -4px; }
+.pv__canvas:active { cursor: grabbing; }
+.pv__canvas canvas { display: block; }
+.pv__loading { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); color: rgba(250,246,238,.8); font-size: 13px; letter-spacing: .04em; }
+.pv__fallback { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 12px; color: rgba(250,246,238,.8); font-size: 13.5px; }
+.pv__fallback svg { width: min(220px, 55%); height: auto; }
+.pv__caption { margin-top: 12px; font-size: 12.5px; letter-spacing: .02em; color: var(--ink-500); }
+@media (max-width: 720px) { .pv__stage { height: 340px; } }

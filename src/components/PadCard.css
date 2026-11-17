@@ -1,0 +1,58 @@
+.padcard {
+  position: relative;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.padcard:hover { box-shadow: var(--shadow-soft); }
+
+.padcard--highlight {
+  border-color: var(--berry-500);
+  background: linear-gradient(180deg, var(--blush-100), var(--paper) 55%);
+}
+
+.padcard__badge {
+  position: absolute;
+  top: -13px;
+  left: 24px;
+  background: var(--berry-500);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.padcard__glyph { margin-bottom: 6px; }
+
+.padcard__name { font-size: 22px; margin-bottom: 2px; }
+
+.padcard__tagline {
+  color: var(--ink-500);
+  font-size: 14px;
+  min-height: 40px;
+}
+
+.padcard__specs {
+  margin: 14px 0 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+}
+.padcard__specs div { display: flex; flex-direction: column; gap: 2px; }
+.padcard__specs dt { font-size: 11.5px; text-transform: none; color: var(--ink-500); font-weight: 600; }
+.padcard__specs dd { margin: 0; font-size: 14px; font-weight: 700; color: var(--ink-900); }
+
+.padcard__price {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--sage-700);
+}
+.padcard__price span { font-size: 13px; font-weight: 500; color: var(--ink-500); font-family: var(--font-body); }

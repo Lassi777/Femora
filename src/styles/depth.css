@@ -1,0 +1,25 @@
+/* ===== Premium depth + restrained motion layer ===== */
+:root { --r-card: 14px; --shadow-card: 0 1px 0 rgba(255,255,255,.85) inset, 0 1px 2px rgba(20,36,28,.06), 0 22px 40px -26px rgba(20,36,28,.34); --shadow-lift: 0 1px 0 rgba(255,255,255,.85) inset, 0 2px 4px rgba(20,36,28,.08), 0 30px 48px -26px rgba(20,36,28,.42); }
+h1, h2, h3 { letter-spacing: -.015em; }
+.eyebrow-plain { letter-spacing: .16em !important; text-transform: uppercase; font-size: 12.5px !important; }
+
+.btn { transition: transform .2s ease, box-shadow .2s ease, background .2s, color .2s, border-color .2s; }
+.btn-primary:not(:disabled) { box-shadow: 0 1px 0 rgba(255,255,255,.28) inset, 0 12px 26px -12px rgba(122,32,57,.6); }
+.btn-primary:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,.28) inset, 0 18px 30px -12px rgba(122,32,57,.62); }
+.btn-primary:not(:disabled):active { transform: translateY(1px); box-shadow: 0 6px 12px -8px rgba(122,32,57,.6); }
+.btn-secondary:hover, .btn-ghost:hover { transform: translateY(-1px); }
+.btn-secondary:active, .btn-ghost:active { transform: translateY(1px); }
+
+.demo__col, .dashcard, .sumcard, .qpage__card, .formpage__card, .astat, .acard, .adminband__box, .padcard, .rp__chip {
+  border-radius: var(--r-card); box-shadow: var(--shadow-card); transition: transform .25s ease, box-shadow .25s ease;
+}
+.dashcard:hover, .astat:hover, .padcard:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
+
+.reveal { opacity: 0; }
+.reveal.is-in { opacity: 1; animation: revealIn .8s var(--d, 0ms) cubic-bezier(.2,.8,.2,1) backwards; }
+@keyframes revealIn { from { opacity: 0; transform: translateY(22px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-iteration-count: 1 !important; animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1 !important; }
+}

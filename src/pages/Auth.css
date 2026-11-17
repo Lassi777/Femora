@@ -1,0 +1,11 @@
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: var(--sage-50); border-radius: 999px; padding: 4px; margin: 4px 0 18px; }
+.seg__btn { padding: 10px; border-radius: 999px; font-weight: 700; font-size: 14.5px; color: var(--ink-500); }
+.seg__btn.is-on { background: var(--ink-900); color: var(--cream); }
+.pw { position: relative; }
+.pw .field-input { padding-right: 70px; width: 100%; }
+.pw__toggle { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; font-weight: 700; color: var(--berry-500); }
+.remember { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ink-700); margin-bottom: 14px; }
+.formerror { margin: 4px 0 8px; }
+.auth__alt { text-align: center; margin-top: 22px; font-size: 14.5px; color: var(--ink-500); }
+.auth__alt a { color: var(--berry-500); font-weight: 700; }
+.demo-note { font-size: 13px; color: var(--ink-500); margin: 4px 0 12px; }

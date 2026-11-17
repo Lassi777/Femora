@@ -1,0 +1,93 @@
+.dashpage { min-height: 100vh; background: var(--cream); }
+
+.dashpage__wrap { padding: 56px 28px 60px; }
+
+.dashpage__title {
+  font-size: clamp(28px, 4vw, 38px);
+  margin: 12px 0 0;
+}
+
+.dashpage__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.dashpage__logout {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--berry-500);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+.dashpage__logout:hover { border-color: var(--berry-500); background: var(--blush-100); }
+
+.dashgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dashcard {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 26px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.dashcard--wide { grid-column: 1 / -1; }
+.dashcard h2 { font-size: 16px; margin-bottom: 14px; }
+
+.dashcard__big {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sage-700);
+  margin-bottom: 4px;
+}
+.dashcard__sub { color: var(--ink-500); font-size: 14px; margin-bottom: 18px; flex-grow: 1; }
+
+.dashcard__link {
+  align-self: flex-start;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--berry-500);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dashorders { display: flex; flex-direction: column; gap: 10px; }
+.dashorders__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.3fr 1fr;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--sage-50);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashorders__id { color: var(--sage-700); }
+.dashorders__date { text-align: right; color: var(--ink-500); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .dashgrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .dashpage__wrap { padding: 40px 18px 40px; }
+  .dashpage__header { flex-wrap: wrap; align-items: flex-start; }
+  .dashgrid { grid-template-columns: 1fr; }
+  .dashorders__row { grid-template-columns: 1fr 1fr; row-gap: 4px; }
+}
+
+.dashorder__detail { padding: 14px 16px 6px; background: var(--paper); border: 1.5px solid var(--sage-50); border-radius: 0 0 12px 12px; }
+.dashorder__note { margin-top: 10px; font-size: 14px; color: var(--ink-700); }

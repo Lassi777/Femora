@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color tokens */
+  --cream: #FAF6EE;
+  --cream-deep: #F3EBDC;
+  --sage-50: #EEF3EA;
+  --sage-200: #C6D8BE;
+  --sage-500: #6E8F63;
+  --sage-700: #45613C;
+  --blush-100: #F8E4E4;
+  --blush-300: #EFC3C6;
+  --berry-500: #B4365B;
+  --berry-600: #96284A;
+  --berry-700: #7A2039;
+  --ink-900: #1F2A1C;
+  --ink-700: #35422F;
+  --ink-500: #5B6A54;
+  --paper: #FFFFFE;
+  --line: rgba(31, 42, 28, 0.12);
+
+  /* Type */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii - varied intentionally by hierarchy */
+  --r-hero: 40px;
+  --r-card: 22px;
+  --r-chip: 999px;
+  --r-input: 14px;
+
+  --shadow-soft: 0 10px 30px -12px rgba(31, 42, 28, 0.18);
+  --shadow-lift: 0 18px 44px -14px rgba(150, 40, 74, 0.22);
+
+  --container: 1160px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink-900);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* FEMORA uses a fixed brand palette (cream/sage/blush/berry) by design —
+   it does not invert to the viewer's system dark-mode preference, since
+   several sections (like the footer) use these tokens as fixed brand
+   swatches rather than adaptive foreground/background pairs. */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink-900);
+  margin: 0;
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+p { margin: 0; line-height: 1.6; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: var(--r-chip);
+  font-weight: 700;
+  font-size: 15.5px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  min-height: 48px;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--berry-500);
+  color: var(--cream);
+  box-shadow: var(--shadow-lift);
+}
+.btn-primary:hover { background: var(--berry-600); }
+.btn-primary:disabled {
+  background: var(--ink-500);
+  opacity: 0.35;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn-primary:disabled:active { transform: none; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink-900);
+  border: 1.5px solid var(--ink-900);
+}
+.btn-secondary:hover { background: var(--ink-900); color: var(--cream); }
+
+.btn-ghost {
+  background: var(--paper);
+  color: var(--sage-700);
+  border: 1.5px solid var(--sage-200);
+}
+.btn-ghost:hover { border-color: var(--sage-500); }
+
+.eyebrow-plain {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--berry-500);
+  letter-spacing: 0.02em;
+}
+
+.field-label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink-700);
+  margin-bottom: 8px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--r-input);
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: var(--ink-900);
+  transition: border-color 0.15s ease;
+}
+.field-input:focus {
+  outline: none;
+  border-color: var(--sage-500);
+}
+.field-input.has-error { border-color: var(--berry-500); }
+
+.field-error {
+  color: var(--berry-500);
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--sage-700);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

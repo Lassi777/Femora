@@ -1,0 +1,40 @@
+.readypage { min-height: 100vh; background: var(--cream); }
+
+.readypage__wrap {
+  display: flex;
+  justify-content: center;
+  padding: 90px 28px 100px;
+}
+
+.readypage__card {
+  max-width: 560px;
+  text-align: center;
+  background: var(--paper);
+  border-radius: var(--r-hero);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  padding: 56px 48px;
+}
+
+.readypage__title {
+  font-size: clamp(28px, 4.4vw, 38px);
+  margin: 14px 0 18px;
+}
+
+.readypage__desc {
+  color: var(--ink-500);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.readypage__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.readypage__btn { width: 100%; padding: 18px 24px; font-size: 16px; }
+
+@media (max-width: 560px) {
+  .readypage__card { padding: 40px 26px; }
+}

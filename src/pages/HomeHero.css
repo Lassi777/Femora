@@ -1,0 +1,40 @@
+/* ---- Hero (editorial, no illustration) ---- */
+.hx { position: relative; isolation: isolate; overflow: hidden; color: var(--cream); padding: 176px 0 0; background: #14241c; }
+.hx::before { content: ''; position: absolute; inset: 0; z-index: -2; background:
+  radial-gradient(55% 65% at 88% 8%, rgba(180,54,91,.30), transparent 62%),
+  radial-gradient(70% 80% at 6% 100%, rgba(110,143,99,.38), transparent 66%),
+  linear-gradient(165deg, #214034 0%, #14241c 72%); }
+.hx::after { content: ''; position: absolute; inset: 0; z-index: -1; opacity: .09; mix-blend-mode: overlay; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hx__bg { position: absolute; inset: 0; z-index: -1; color: rgba(250,246,238,.10); pointer-events: none; }
+.hx__bg svg { position: absolute; right: -6%; top: -10%; width: 70%; height: 130%; }
+.hx__grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 80px; align-items: end; padding-bottom: 88px; }
+.hx__kicker { font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--blush-300); font-weight: 700; }
+.hx__headline { font-family: var(--font-display); font-weight: 400; color: var(--cream); font-size: clamp(42px, 6.6vw, 96px); line-height: 1; letter-spacing: -.035em; margin: 22px 0 28px; max-width: 13ch; text-wrap: balance; }
+.hx__headline em { font-style: italic; color: var(--blush-300); }
+.hx__headline sup { font-size: .3em; vertical-align: super; color: var(--blush-300); margin-left: 4px; }
+.hx__desc { max-width: 50ch; font-size: 18px; line-height: 1.72; color: rgba(250,246,238,.8); margin-bottom: 36px; }
+.hx__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hx__ghost { border: 1.5px solid rgba(250,246,238,.45); color: var(--cream); background: transparent; }
+.hx__ghost:hover { background: var(--cream); color: var(--ink-900); border-color: var(--cream); }
+.hx__foot { margin-top: 22px; font-size: 12.5px; color: rgba(250,246,238,.6); max-width: 52ch; }
+.hx__principles { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(250,246,238,.2); }
+.hx__principles li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 22px 0; border-bottom: 1px solid rgba(250,246,238,.2); }
+.hx__principles span { font-family: var(--font-display); font-style: italic; color: var(--blush-300); font-size: 18px; }
+.hx__principles strong { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -.01em; }
+.hx__principles p { color: rgba(250,246,238,.7); font-size: 14.5px; margin-top: 4px; }
+.hx__cats { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; padding: 22px max(28px, calc((100vw - 1180px) / 2)); border-top: 1px solid rgba(250,246,238,.16); font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: rgba(250,246,238,.7); }
+@media (max-width: 960px) { .hx { padding-top: 132px; } .hx__grid { grid-template-columns: 1fr; gap: 48px; padding-bottom: 56px; } .hx__headline { max-width: 15ch; } }
+@media (max-width: 560px) { .hx__cats { justify-content: flex-start; font-size: 11.5px; padding: 18px 20px; } .hx__desc { font-size: 16.5px; } }
+
+/* ---- Product type overview ---- */
+.types { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink-900); }
+.types__item { padding: 26px 24px 30px 0; border-right: 1px solid var(--line); }
+.types__item + .types__item { padding-left: 24px; }
+.types__item:last-child { border-right: 0; }
+.types__n { font-family: var(--font-display); font-style: italic; color: var(--berry-500); }
+.types__item h3 { font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -.015em; margin: 8px 0 10px; }
+.types__item p { color: var(--ink-700); font-size: 15px; }
+.types__vars { margin-top: 14px; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-500) !important; }
+@media (max-width: 960px) { .types { grid-template-columns: 1fr 1fr; } .types__item, .types__item + .types__item { padding: 22px 20px 24px 0; border-bottom: 1px solid var(--line); } }
+@media (max-width: 560px) { .types { grid-template-columns: 1fr; } .types__item { border-right: 0; } }
